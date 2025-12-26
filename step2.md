@@ -233,3 +233,5 @@ A vous de tester que l'affichage de la homepage est ok !
 ## Prochaine étape
 
 Dans la prochaine étape <a href="https://github.com/GregLeBarbar/app-teachers-adonisjs-2026/tree/step3">step3</a>, nous allons nous intéresser à la base de données et comment créer les tables MySQL dont nous avons besoin pour notre application.
+
+Nous reviendrons plus tard dans l'exploration du gestionnaire de template `Edge`.
