@@ -1,49 +1,53 @@
-# Application des surnoms des enseignants - Step 0
+# Application des surnoms des enseignants - Step1
 
-## Générer le projet de départ
+Dans cette étape, nous allons travailler dans une vue (le V du pattern MVC).
 
-Dans cette étape, nous allons simplement exécuter la commande initiale qui permet de générer un projet AodnisJS.
+## Qu'est qu'une vue ?
 
-```bash
-npm init adonisjs@latest app-teachers-adonisjs -- --kit=web --db=mysql --auth-guard=session
+Une vue est un fichier qui contient du HTML combiné avec des balises dynamiques pour insérer des données générées par le serveur.
+Ces fichiers sont généralement gérés par un moteur de templates, tel que Edge dans AdonisJS.
+
+## Version statique
+
+Pour commencer cette aventure avec le framework AdonisJS, nous allons récupérer la <a href="https://github.com/GregLeBarbar/application-surnoms-version-statique">Version statique HTML5 / CSS3</a> de l'application des surnoms des enseignants.
+
+## Fichier css
+
+Nous allons copier le contenu du fichier 'style.css' de l'application statique pour le coller dans le fichier 'app.css' présent dans le répertoire 'resources/css'.
+
+## Modifier la vue 'home'
+
+Nous allons modifier la vue `home.edge` pour copier/coller le html présent dans le fichier 'index.html' de la version statique.
+
+## Import des fichiers statiques css et js
+
+Dans la balise `head` nous allons remplacer la ligne
+
+```html
+<link href="./css/style.css" rel="stylesheet" />
 ```
 
-`app-teachers-adonisjs` est le nom du projet.
+par
 
-`--kit=web` permet de spécifier que nous souhaitons créer une application web de rendu serveur traditionnelle.
+```edge
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+```
 
-`--db=mysql` permet de spécifier le SGBDR souhaité, dans notre cas MySQL.
+afin d'importer les fichiers statiques.
 
-`--auth-guard=session` permet de spécifier le garde d'authentification, à savoir session, qui est basé sur les sessions et les cookies.
+La directive `@vite` gère automatiquement l'inclusion des scripts nécessaires, que ce soit en mode développement avec le serveur `Vite` ou en production avec les fichiers compilés.
 
-Nous obtenons une arborescence complète de fichiers et répertoires.
+## Images
 
-<img src="./doc/images/arborescence.png" style="width: 10%">
+Dans la version statique de l'application, il y a quelques icônes présents dans le répertoire `img/`.
 
-Pas de panique ! Vous allez rapidement vous retrouvez dans tous ces fichiers.
+Dans notre projet AdonisJS, nous allons créer un répertoire `public/` et copier le répertoire `img/` à l'intérieur.
 
-## Installation des extensions de vscode
+## Etat de l'application à la fin de cette étape
 
-Nous allons installer 3 extensions :
+Notre application a pour l'instant qu'une page à savoir la homepage.
+De plus, pour l'instant tout est statique.
 
-- AdonisJS Extension
+<img src="./doc/images/step1-fin.png" style="width:50%" />
 
-<img src="./doc/images/extension-vscode-adonisjs.png" style="width: 30%">
-
-C'est l'extension officielle vs-code pour le framework AdonisJS.
-
-- Edge template
-
-<img src="./doc/images/extension-vscode-adonisjs-edge-template.png" style="width: 30%">
-
-Le gestionnaire de template d'AdonisJS est Edge. Cette extension offre la coloration syntaxique Edge pour Visual Studio Code.
-
-- Test runner Japa (facultatif)
-
-<img src="./doc/images/extension-vscode-test-runner-japa.png" style="width: 30%">
-
-Extension vs-code pour les tests automatisés.
-
-## Prochaine étape
-
-Dans la prochaine étape <a href="https://github.com/GregLeBarbar/app-teachers-adonisjs/tree/step1">step1</a>, nous allons modifier la vue `home` et gérer les fichiers statiques CSS et JS.
+Dans la prochaine étape <a href="https://github.com/GregLeBarbar/app-teachers-adonisjs/tree/step2">step2</a>, nous allons découvrir plus en détail le gestionnaire de template d'AdonisJS : <a href="https://edgejs.dev/docs/introduction">EDGE</a>.
