@@ -38,11 +38,30 @@ C'est l'extension officielle vs-code pour le framework AdonisJS.
 
 Le gestionnaire de template d'AdonisJS est Edge. Cette extension offre la coloration syntaxique Edge pour Visual Studio Code.
 
-- Test runner Japa (facultatif)
+- Prettier - Code formatter
 
-<img src="./doc/images/extension-vscode-test-runner-japa.png" style="width: 30%">
+<img src="./doc/images/extension-vscode-prettier.png" style="width: 30%">
 
-Extension vs-code pour les tests automatisés.
+Fomater votre code avec Prettier.
+
+Nous devons configurer Prettier pour qu'il formatte le code lorsque nous enregistrons le fichier courant.
+
+Pour cela, Menu File > Preferences > Settings
+
+Puis, nous devons saisir le mot clé 'Format' puis configurer comme ci-dessous :
+
+<img src="./doc/images/config-prettier-1.png" style="width: 40%">
+
+- Cocher : "Editor : Fomat On Save"
+- Sélectionner prettier dans la liste déroulante
+
+<img src="./doc/images/config-prettier-2.png" style="width: 15%">
+
+- Cocher : Edge comme ci-dessous :
+
+Ici on saisit 'Format'
+
+Maintenant que Prettier est configuré, nous pouvons formatter le code simplement en faisant ctrl + s pour enregistrer le fichier.
 
 ## Prochaine étape
 
